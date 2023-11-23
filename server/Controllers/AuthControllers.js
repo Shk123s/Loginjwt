@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken")
 const maxAge = 3*24*60*60;
 
 const createToken = (id)=>{
-    return jwt.sign({id},"shaqeeb shaikh secret key ",{
+    return jwt.sign({id},"shaqeeb shaikh secret key",{
         expiresIn:maxAge
     });
 }
@@ -12,11 +12,13 @@ const handleErrors = (err)=>{
     let errors = {email:"",password:""};
     if(err.message === "Incorrect email")
     {
-       errors.email = "That email is not registered"
+       errors.email = "That email is not registered";
+       return errors;
     } 
     if(err.message === "incorrect password")
     {
-       errors.email = "That password is incorrect "
+       errors.email = "That password is incorrect ";
+       return errors;
     } 
     if (err.code === 11000) {
         errors.email = "Email is already registered";
