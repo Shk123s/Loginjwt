@@ -22,12 +22,12 @@ const Supermainpage = () => {
       }
       else
       {
-       toast(`Hi ${data.user}`,{theme:"dark"});
+        toast(`Hi ${data.user}`,{theme:"dark"});
       }
      }
     
     } 
-    verifyUser();
+   return ()=>  verifyUser();
   },[cookies,Navigate,removiecookie])
   const Logout = ()=>{
     removiecookie("jwt");

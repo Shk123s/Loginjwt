@@ -29,7 +29,7 @@ const handlesubmit =async (e)=>
       if(data.errors)
       {
            const  {email,password} = data.errors;
-           console.log(email)
+          //  console.log(email)
            if (email) {
             generateError(email);
             

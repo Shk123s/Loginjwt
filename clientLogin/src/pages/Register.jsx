@@ -24,8 +24,9 @@ const handlesubmit =async (e)=>
         withCredentials:true
     });
     if(data)
-    {  console.log(data.errors)
-      console.log(data.errors);
+    {  
+      // console.log(data.errors)
+      // console.log(data.errors);
       if(data.errors)
       {
            const  {email,password} = data.errors;
